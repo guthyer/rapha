@@ -84,3 +84,27 @@ with open('index.html', 'w', encoding='utf-8') as file:
     file.write(html_final)
 
 print("Site gerado com sucesso! Abra o arquivo 'index.html' no seu navegador.")
+
+5. Script Python (gerador_site.py)
+# Abre e lê o arquivo de template
+with open('template.html', 'r', encoding='utf-8') as file:
+    template = file.read()
+
+# Abre e lê o arquivo de conteúdo
+with open('conteudo.txt', 'r', encoding='utf-8') as file:
+    conteudo = file.read()
+
+# Define os valores para substituir no template
+titulo_pagina = "Março Lilás - Mulheres em Foco"
+titulo_cabecalho = "Março Lilás: Pela Dignidade e Direitos das Mulheres"
+
+# Substitui os marcadores pelos conteúdos
+html_final = template.replace('{{TITULO_PAGINA}}', titulo_pagina)
+html_final = html_final.replace('{{TITULO_CABECALHO}}', titulo_cabecalho)
+html_final = html_final.replace('{{CONTEUDO}}', conteudo)
+
+# Cria e escreve o arquivo final index.html
+with open('index.html', 'w', encoding='utf-8') as file:
+    file.write(html_final)
+
+print("Site gerado com sucesso! Abra o arquivo 'index.html' no seu navegador.")
